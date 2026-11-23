@@ -1,3 +1,9 @@
+require('dotenv').config();
+
+const connectDB = require('./config/database');
+
+// Connect to MongoDB Atlas
+connectDB();
 
 var createError = require('http-errors');
 var express = require('express');

@@ -1,11 +1,101 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('partials/header') %>
+
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-7">
+        <span class="hero-label">
+          Your Personal Movie Collection
+        </span>
+
+        <h1>
+          Every Great Movie
+          <span>Deserves a Place.</span>
+        </h1>
+
+        <p class="hero-description">
+          Welcome to MovieVault, your personal movie watchlist. Organize your favorite films, track what you've watched, and keep a list of what to watch next.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="/movies" class="btn btn-movie-primary">
+            Explore Movies
+          </a>
+
+          <a href="/movies/new" class="btn btn-movie-outline">
+            + Add Movie
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="hero-art text-center">
+          <div class="film-icon">🎬</div>
+          <h2>MovieVault</h2>
+          <p>Watch. Track. Remember.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+
+    <div class="text-center section-heading">
+      <h2>Everything You Need</h2>
+      <p>Keep your movie collection organized in one place.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">🎞️</div>
+          <h3>Build Your Collection</h3>
+          <p>
+            Add movies with their titles, genres,directors, and release years.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Track Your Watchlist</h3>
+          <p>
+            Organize movies as Want to Watch, Watching, or Watched.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <h3>Rate Your Movies</h3>
+          <p>
+            Give your favorite movies personal ratings and update them anytime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container text-center">
+    <h2>Ready to Build Your Movie Library?</h2>
+
+    <p>
+      Start organizing your favourite movies with MovieVault.
+    </p>
+
+    <a href="/movies/new" class="btn btn-movie-primary">
+      + Add Your First Movie
+    </a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

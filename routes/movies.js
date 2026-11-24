@@ -13,4 +13,6 @@ router.get('/:id/edit', movieController.showEditForm);
 
 router.post('/:id/edit', movieController.updateMovie);
 
+router.post('/:id/delete', movieController.deleteMovie);
+
 module.exports = router;

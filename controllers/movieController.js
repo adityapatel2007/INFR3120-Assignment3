@@ -141,3 +141,18 @@ exports.updateMovie = async (req, res, next) => {
         next(error);
     }
 };
+
+exports.deleteMovie = async (req, res, next) => {
+    try {
+        const movie = await Movie.findByIdAndDelete(req.params.id);
+
+        if (!movie) {
+            return res.status(404).send('Movie not found');
+        }
+
+        res.redirect('/movies');
+
+    } catch (error) {
+        next(error);
+    }
+};

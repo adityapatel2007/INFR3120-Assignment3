@@ -9,4 +9,8 @@ router.get('/new', movieController.showAddForm);
 
 router.post('/', movieController.createMovie);
 
+router.get('/:id/edit', movieController.showEditForm);
+
+router.post('/:id/edit', movieController.updateMovie);
+
 module.exports = router;

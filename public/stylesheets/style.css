@@ -573,3 +573,32 @@ footer p,
         padding: 25px 20px;
     }
 }
+
+.movie-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    border-top: 1px solid #B6CCD8;
+}
+
+.movie-actions .btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+}
+
+.edit-movie-page {
+    background-color: #CCCFD5;
+}
+
+.edit-movie-page .btn-movie-primary {
+    background-color: #4682B4;
+    border-color: #4682B4;
+    color: #FFFFFF;
+}
+
+.edit-movie-page .btn-movie-primary:hover {
+    background-color: #3DBF56;
+    border-color: #3DBF56;
+    color: #22232E;
+}

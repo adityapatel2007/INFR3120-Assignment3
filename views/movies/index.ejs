@@ -124,8 +124,7 @@
                                             
                                         </a>
 
-                                        <form
-                                            action="/movies/<%= movie.id %>delete"
+                                        <form action="/movies/<%= movie.id %>/delete"
                                             method="POST"
                                             class="delete-movie-form"
                                             onsubmit="return confirm('Are you sure you want to delete this movie? This action cannot be undone.');">
@@ -135,7 +134,7 @@
                                                 class="btn btn-danger">
                                                 Delete Movie
                                             </button>
-                                            
+
                                         </form>
 
                                         

@@ -343,7 +343,6 @@ footer p,
     font-size: 0.9rem;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .navbar-logo {
         width: 150px;
@@ -379,5 +378,132 @@ footer p,
 
     .movie-poster {
         height: 200px;
+    }
+}
+
+/* Library page heading */
+.library-heading {
+    background: linear-gradient(
+        135deg,
+        #22232E,
+        #3b6f99
+    );
+    padding: 60px 0;
+    border-bottom: 5px solid #3DBF56;
+}
+
+.library-heading h1 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.library-heading p {
+    color: #E3EAF0;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Library content area */
+.library-section {
+    background-color: #CCCFD5;
+    padding: 70px 0;
+    min-height: 450px;
+}
+
+/* Movie cards */
+.movie-card {
+    background: radial-gradient(
+        ellipse at center,
+        #f7fbfc 0%,
+        #d9edf2 40%,
+        #add9e4 100%
+    );
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s,
+                box-shadow 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(
+        0, 0, 0, 0.15
+    );
+}
+
+.movie-card .card-body {
+    padding: 30px;
+}
+
+.movie-card-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.movie-card .card-title {
+    color: #22232E;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.movie-meta {
+    margin-bottom: 20px;
+}
+
+.movie-detail {
+    color: #22232E;
+    margin-bottom: 10px;
+}
+
+.movie-description {
+    color: #465064;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #B6CCD8;
+}
+
+.empty-library {
+    background-color: #FFFFFF;
+    padding: 70px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(
+        0, 0, 0, 0.08
+    );
+}
+
+.empty-icon {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.empty-library h2 {
+    color: #22232E;
+    font-weight: 800;
+}
+
+.empty-library p {
+    color: #465064;
+    margin: 20px auto 30px;
+    max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    .library-heading {
+        padding: 45px 0;
+    }
+
+    .library-heading h1 {
+        font-size: 2rem;
+    }
+
+    .library-section {
+        padding: 40px 0;
+    }
+
+    .empty-library {
+        padding: 45px 20px;
     }
 }

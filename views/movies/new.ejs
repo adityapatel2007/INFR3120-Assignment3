@@ -1,0 +1,203 @@
+<%- include('../partials/header') %>
+
+<main class="add-movie-page">
+
+    <section class="library-heading">
+        <div class="container">
+            <h1>Add a New Movie</h1>
+            <p>
+                Add a movie to your personal collection.
+            </p>
+        </div>
+    </section>
+
+    <section class="add-movie-section">
+        <div class="container">
+
+            <form action="/movies"
+                  method="POST"
+                  class="movie-form">
+
+                <h2 class="text-center mb-4">
+                    Movie Details
+                </h2>
+
+                <% if (error) { %>
+                    <div class="alert alert-danger">
+                        <%= error %>
+                    </div>
+                <% } %>
+
+                <!-- Movie Title -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">
+                        Movie Title *
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="title"
+                        name="title"
+                        value="<%= formData.title || '' %>"
+                        placeholder="Enter movie title"
+                        maxlength="150"
+                        required>
+                </div>
+
+                <!-- Genre -->
+                <div class="mb-3">
+                    <label for="genre" class="form-label">
+                        Genre *
+                    </label>
+
+                    <select
+                        class="form-select"
+                        id="genre"
+                        name="genre"
+                        required>
+
+                        <option value="">
+                            Select a genre
+                        </option>
+
+                        <% [
+                            'Action', 'Adventure', 'Comedy',
+                            'Drama', 'Horror', 'Sci-Fi',
+                            'Romance', 'Thriller',
+                            'Animation', 'Other'
+                        ].forEach(genre => { %>
+
+                            <option
+                                value="<%= genre %>"
+                                <%= formData.genre === genre
+                                    ? 'selected' : '' %>>
+                                <%= genre %>
+                            </option>
+
+                        <% }) %>
+
+                    </select>
+                </div>
+
+                <!-- Release Year -->
+                <div class="mb-3">
+                    <label for="releaseYear" class="form-label">
+                        Release Year *
+                    </label>
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="releaseYear"
+                        name="releaseYear"
+                        min="1888"
+                        max="2100"
+                        value="<%= formData.releaseYear || '' %>"
+                        placeholder="e.g. 2014"
+                        required>
+                </div>
+
+                <!-- Director -->
+                <div class="mb-3">
+                    <label for="director" class="form-label">
+                        Director
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="director"
+                        name="director"
+                        maxlength="100"
+                        value="<%= formData.director || '' %>"
+                        placeholder="Enter director name">
+                </div>
+
+                <!-- Watch Status -->
+                <div class="mb-3">
+                    <label for="watchStatus" class="form-label">
+                        Watch Status
+                    </label>
+
+                    <select
+                        class="form-select"
+                        id="watchStatus"
+                        name="watchStatus">
+
+                        <% [
+                            'Want to Watch',
+                            'Watching',
+                            'Watched'
+                        ].forEach(status => { %>
+
+                            <option
+                                value="<%= status %>"
+                                <%= (formData.watchStatus ||
+                                    'Want to Watch') === status
+                                    ? 'selected' : '' %>>
+                                <%= status %>
+                            </option>
+
+                        <% }) %>
+
+                    </select>
+                </div>
+
+                <!-- Rating -->
+                <div class="mb-3">
+                    <label for="rating" class="form-label">
+                        Rating (1–10)
+                    </label>
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="rating"
+                        name="rating"
+                        min="1"
+                        max="10"
+                        step="1"
+                        value="<%= formData.rating || '' %>"
+                        placeholder="Leave blank if not rated">
+                </div>
+
+                <!-- Description -->
+                <div class="mb-4">
+                    <label for="description" class="form-label">
+                        Description / Notes
+                    </label>
+
+                    <textarea
+                        class="form-control"
+                        id="description"
+                        name="description"
+                        rows="4"
+                        maxlength="1000"
+                        placeholder="Write a short description or your thoughts about the movie"><%= formData.description || '' %></textarea>
+                </div>
+
+                <!-- Form Buttons -->
+                <div class="d-flex gap-3 flex-wrap">
+
+                    <button
+                        type="submit"
+                        class="btn btn-movie-primary">
+                        Save Movie
+                    </button>
+
+                    <a href="/movies"
+                       class="btn btn-secondary">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+</main>
+
+<%- include('../partials/footer') %>
